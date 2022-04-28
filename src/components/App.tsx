@@ -2,9 +2,13 @@ import React from 'react';
 import logo from '../assets/logo.svg';
 import styled, { keyframes } from 'styled-components';
 
-function App() {
+// Import Components
+import { GlobalStyle } from './utils';
+
+const App: React.FC = () => {
 	return (
 		<Container className='App'>
+			<GlobalStyle />
 			<header className='App-header'>
 				<Rotate src={logo} className='App-logo' alt='logo'></Rotate>
 				<p>
@@ -21,7 +25,7 @@ function App() {
 			</header>
 		</Container>
 	);
-}
+};
 
 export default App;
 
