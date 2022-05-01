@@ -1,11 +1,14 @@
 // Interfaces
+/* import ABZ from '../../assets/fonts/ABeeZee-regular.tft';
+import ABZitalic from '../../assets/fonts/ABeeZee-italic.tft'; */
+
 interface ItypeScale {
 	[key: string]: string;
 }
 
 // Exports
-export const primaryFont: string = '"Roboto"';
-export const headerFont: string = '"Biryani", roboto';
+/* export const primaryFont: string = ABZ;
+export const headerFont: string = ABZitalic; */
 
 export const typeScale: ItypeScale = {
 	header1: '1.8rem',

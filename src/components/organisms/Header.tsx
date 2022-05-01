@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Componens
+import { theme } from '../utils';
 import logo from '../../assets/logo.svg';
 
 export const Header: React.FC = () => {
@@ -25,6 +26,7 @@ const HeaderStyled = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: ${theme.primaryColor};
 `;
 
 const Img = styled.img`
@@ -40,5 +42,5 @@ const Nav = styled.nav`
 
 const LinkStyled = styled(Link)`
 	text-decoration: none;
-	color: black;
+	color: ${theme.textColor};
 `;

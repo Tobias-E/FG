@@ -1,6 +1,9 @@
 import { createGlobalStyle, DefaultTheme, GlobalStyleComponent } from 'styled-components';
-import { primaryFont, headerFont } from './typography';
+//import { primaryFont, headerFont } from './typography';
 import { normalize } from 'polished';
+
+import ABZ from '../../assets/fonts/ABeeZee-Regular.ttf';
+import ABZItalic from '../../assets/fonts/ABeeZee-Italic.ttf';
 
 export const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
     ${normalize}
@@ -11,11 +14,24 @@ export const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalS
     *, *:before, *:after {
         box-sizing: inherit;
     }
+
+    @font-face {
+        font-family: ABeeZee;
+        font-style: normal;
+        src: url(${ABZ});
+    }
+
+    @font-face {
+        font-family: ABeeZeeItalic;
+        font-style: normal;
+        src: url(${ABZItalic});
+    }
+
     body{
         margin: 0;
-        font-family: ${primaryFont};
+        font-family: "ABeeZee";
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: ${headerFont};
+        font-family: "ABeeZee";
     }
 `;
