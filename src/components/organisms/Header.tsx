@@ -1,31 +1,22 @@
-import { useRecoilState } from 'recoil';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Assets, interfaces & states
-import { burgerState } from '../Recoil';
-import { theme, IOpen } from '../utils';
+import { theme } from '../utils';
 import logo from '../../assets/logo.svg';
 
 // Components
-import { Burger } from '../atoms/Burger';
+import { Burger } from '../atoms';
+import { Nav } from '../molecules';
 
 // Export
 export const Header: React.FC = () => {
-	const [open, setOpen] = useRecoilState(burgerState);
 	return (
 		<HeaderStyled>
 			<Link to='/'>
 				<Img src={logo} alt='Logo' />
 			</Link>
-			<Nav open={open}>
-				<LinkStyled to='/recipes' onClick={() => setOpen(false)}>
-					Recipes
-				</LinkStyled>
-				<LinkStyled to='/articles' onClick={() => setOpen(false)}>
-					Articles
-				</LinkStyled>
-			</Nav>
+			<Nav />
 			<Burger />
 		</HeaderStyled>
 	);
@@ -40,46 +31,12 @@ const HeaderStyled = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	background-color: ${theme.primaryColor};
+	@media screen and (min-width: ${theme.widthDesktop}) {
+		height: 4rem;
+	}
 `;
 
 const Img = styled.img`
 	max-height: 5rem;
 	width: 5rem;
-`;
-
-const Nav = styled.nav<IOpen>`
-	border: 2px solid blue;
-	display: ${({ open }) => (open ? 'flex' : 'none')};
-	position: absolute;
-	z-index: 100;
-	top: 10vh;
-	left: 0;
-	width: 100vw;
-	height: 90vh;
-	padding: 1.5rem 0;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-
-	background-color: ${theme.primaryColor};
-
-	@media screen and (min-width: ${theme.widthDesktop}) {
-		position: static;
-		display: flex;
-		height: 5vh;
-		flex-direction: row;
-		justify-content: flex-end;
-	}
-`;
-
-const LinkStyled = styled(Link)`
-	text-decoration: none;
-	color: ${theme.textColor};
-	font-size: 34px;
-	font-weight: 600;
-	padding: 1.5rem;
-
-	@media screen and (min-width: ${theme.widthDesktop}) {
-		font-size: 18px;
-	}
 `;
