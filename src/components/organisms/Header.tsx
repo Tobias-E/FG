@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-// Componens
+// Components
 import { theme } from '../utils';
 import logo from '../../assets/logo.svg';
+import { Burger } from '../atoms/Burger';
+
+// Interface
 
 export const Header: React.FC = () => {
+	const [open, setOpen] = useState(false);
 	return (
 		<HeaderStyled>
 			<Link to='/'>
@@ -15,6 +20,7 @@ export const Header: React.FC = () => {
 				<LinkStyled to='/recipes'>Recipes</LinkStyled>
 				<LinkStyled to='/articles'>Articles</LinkStyled>
 			</Nav>
+			<Burger open={open} setOpen={setOpen} />
 		</HeaderStyled>
 	);
 };
