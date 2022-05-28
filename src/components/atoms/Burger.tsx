@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-/* import {useRecoilState} from 'recoil' */
-import { theme } from '../utils';
+import { useRecoilState } from 'recoil';
 
-interface IOpen {
-	open: boolean;
-	setOpen?: (val: boolean) => void;
-}
+// Assets, interfaces & states
+import { burgerState } from '../Recoil';
+import { theme, IOpen } from '../utils';
 
-export const Burger: React.FC<IOpen> = ({ open, setOpen }) => {
+export const Burger: React.FC = () => {
+	const [open, setOpen] = useRecoilState(burgerState);
 	return (
 		<>
 			<Container open={open} onClick={() => setOpen?.(!open)}>

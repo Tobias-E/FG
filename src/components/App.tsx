@@ -1,4 +1,5 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -11,16 +12,17 @@ import { Home, Recipes, Articles } from './pages';
 const App: React.FC = () => {
 	return (
 		<Container className='App'>
-			<Router>
-				<GlobalStyle />
-				<Header />
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/recipes' element={<Recipes />} />
-					<Route path='/articles' element={<Articles />} />
-				</Routes>
+			<RecoilRoot>
+				<Router>
+					<GlobalStyle />
+					<Header />
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/recipes' element={<Recipes />} />
+						<Route path='/articles' element={<Articles />} />
+					</Routes>
 
-				{/* <header className='App-header'>
+					{/* <header className='App-header'>
 					<Rotate src={logo} className='App-logo' alt='logo'></Rotate>
 					<p>
 						Edit <code>src/App.tsx</code> and save to reload.
@@ -34,7 +36,8 @@ const App: React.FC = () => {
 						Learn React
 					</a>
 				</header> */}
-			</Router>
+				</Router>
+			</RecoilRoot>
 		</Container>
 	);
 };

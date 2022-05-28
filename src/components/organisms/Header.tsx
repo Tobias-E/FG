@@ -1,21 +1,18 @@
-import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-// Components
-import { theme } from '../utils';
+// Assets, interfaces & states
+import { burgerState } from '../Recoil';
+import { theme, IOpen } from '../utils';
 import logo from '../../assets/logo.svg';
-import { Burger } from '../atoms/Burger';
 
-// Interface
-interface IOpen {
-	open: boolean;
-	setOpen?: (val: boolean) => void;
-}
+// Components
+import { Burger } from '../atoms/Burger';
 
 // Export
 export const Header: React.FC = () => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useRecoilState(burgerState);
 	return (
 		<HeaderStyled>
 			<Link to='/'>
@@ -29,7 +26,7 @@ export const Header: React.FC = () => {
 					Articles
 				</LinkStyled>
 			</Nav>
-			<Burger open={open} setOpen={setOpen} />
+			<Burger />
 		</HeaderStyled>
 	);
 };
