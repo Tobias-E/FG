@@ -10,4 +10,6 @@ export const theme: Itheme = {
 	primaryColor: black[100],
 	textColor: white[100],
 	buttonColor: orange[100],
+	widthTablet: '768px',
+	widthDesktop: '1023px',
 };

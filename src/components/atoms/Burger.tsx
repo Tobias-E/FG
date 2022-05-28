@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+/* import {useRecoilState} from 'recoil' */
 import { theme } from '../utils';
 
 interface IOpen {
@@ -22,8 +23,8 @@ const Container = styled.button<IOpen>`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 40px;
-	height: 40px;
+	width: 2.5rem;
+	height: 2.5rem;
 	padding: 0;
 	background: transparent;
 	border: none;
@@ -31,11 +32,9 @@ const Container = styled.button<IOpen>`
 	&:focus {
 		outline: none;
 	}
-	@media screen and (min-width: 1023px) {
-		display: none;
-	}
+
 	div {
-		width: 40px;
+		width: 2.5rem;
 		height: 4px;
 		position: relative;
 		background: ${theme.textColor};
@@ -53,5 +52,9 @@ const Container = styled.button<IOpen>`
 		:nth-child(3) {
 			transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
 		}
+	}
+
+	@media screen and (min-width: ${theme.widthDesktop}) {
+		display: none;
 	}
 `;
