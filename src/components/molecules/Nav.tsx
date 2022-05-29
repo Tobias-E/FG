@@ -22,7 +22,7 @@ export const Nav: React.FC = () => {
 };
 
 const NavS = styled.nav<IOpen>`
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	display: ${({ open }) => (open ? 'flex' : 'none')};
 	position: absolute;
 	z-index: 100;
@@ -38,7 +38,7 @@ const NavS = styled.nav<IOpen>`
 	background-color: ${theme.primaryColor};
 
 	@media screen and (min-width: ${theme.widthDesktop}) {
-		border: 2px solid orange;
+		/* border: 2px solid orange; */
 		position: static;
 		display: flex;
 		max-height: 100%;

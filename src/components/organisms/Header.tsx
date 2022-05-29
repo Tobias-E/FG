@@ -26,7 +26,9 @@ const HeaderStyled = styled.header`
 	width: 100vw;
 	height: 10vh;
 	padding: 1rem 1.7rem;
-	border: 2px solid red;
+	position: fixed;
+	top: 0px;
+	box-shadow: 0 10px 20px ${theme.primaryColor};
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
