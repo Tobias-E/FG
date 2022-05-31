@@ -14,7 +14,7 @@ export const Landing: React.FC = () => {
 				</H1>
 				<P>Find opskrifter til bagværk, dagligsmad & de helt store middage.</P>
 			</Blur>
-			<CTA>
+			<CTA href='#new'>
 				Find inspiration <CtaIcon />
 			</CTA>
 		</Container>
@@ -50,17 +50,15 @@ const Blur = styled.div`
 
 const H1 = styled.h1`
 	font-weight: 500;
-	color: ${theme.textColor};
 	text-align: left;
 `;
 const P = styled.p`
 	font-weight: 200;
-	color: ${theme.textColor};
 	text-align: left;
 	line-height: 1.6;
 `;
 
-const CTA = styled.button`
+const CTA = styled.a`
 	width: 70vw;
 	align-self: center;
 	padding: 1rem 2.5rem;
@@ -74,4 +72,5 @@ const CTA = styled.button`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	text-decoration: none;
 `;

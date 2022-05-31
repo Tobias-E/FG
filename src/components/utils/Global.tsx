@@ -4,12 +4,14 @@ import { normalize } from 'polished';
 
 import ABZ from '../../assets/fonts/ABeeZee-Regular.ttf';
 import ABZItalic from '../../assets/fonts/ABeeZee-Italic.ttf';
+import { theme } from '../utils';
 
 export const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
     ${normalize}
     html{
         font-size: 16px;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -31,7 +33,8 @@ export const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalS
         margin: 0;
         font-family: "ABeeZee";
     }
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, p {
         font-family: "ABeeZee";
+        color: ${theme.textColor}
     }
 `;
