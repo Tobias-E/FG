@@ -8,18 +8,20 @@ import { Recipe } from '../molecules';
 
 export const NewRecipes = () => {
 	return (
-		<Container id={'new'}>
+		<Container id='new'>
 			<H2>Nye opskrifter</H2>
-			<Recipe />
-			<Recipe />
-			<Recipe />
-			<Recipe />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
+			<Recipe title='Butter Chicken india style' time='1t 45m' />
 		</Container>
 	);
 };
 
 const Container = styled.div`
-	padding: 3rem 0;
+	padding: 5rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

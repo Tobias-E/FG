@@ -25,7 +25,7 @@ const NavS = styled.nav<IOpen>`
 	/* border: 2px solid blue; */
 	display: ${({ open }) => (open ? 'flex' : 'none')};
 	position: absolute;
-	z-index: 100;
+	z-index: 990;
 	top: 10vh;
 	left: 0;
 	width: 100vw;

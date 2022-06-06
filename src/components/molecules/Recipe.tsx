@@ -5,14 +5,19 @@ import { theme } from '../utils';
 import butterChicken from '../../assets/img/butterchicken.png';
 import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 
-export const Recipe = () => {
+interface IRecipe {
+	title: string;
+	time: string;
+}
+
+export const Recipe = (props: IRecipe) => {
 	return (
 		<NewRecipe>
 			<TextBox>
-				<H3>Butter Chicken india style</H3>
+				<H3>{props.title}</H3>
 				<Time>
 					<Clock />
-					<H4Orange>1t 45m</H4Orange>
+					<H4Orange>{props.time}</H4Orange>
 				</Time>
 			</TextBox>
 			<Img src={butterChicken} />

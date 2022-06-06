@@ -29,7 +29,7 @@ const Container = styled.div`
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	z-index: -1;
+	z-index: 1;
 `;
 
 const Blur = styled.div`
@@ -37,10 +37,7 @@ const Blur = styled.div`
 	border-radius: 10px;
 	&:after {
 		content: '';
-		backdrop-filter: blur(2px);
 		border-radius: 20px;
-		position: absolute;
-		z-index: -2;
 		top: 20vh;
 		left: 3.5rem;
 		height: 15rem;
