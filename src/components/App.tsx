@@ -3,9 +3,12 @@ import { RecoilRoot } from 'recoil';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+// Assets, interfaces & states
+import { theme } from './utils';
+
 // Import Components
 import { GlobalStyle } from './utils';
-import { Header } from './organisms';
+import { Header, Footer } from './organisms';
 import { Home, Recipes, Articles } from './pages';
 //import logo from '../assets/logo.svg';
 
@@ -21,7 +24,7 @@ const App: React.FC = () => {
 						<Route path='/recipes' element={<Recipes />} />
 						<Route path='/articles' element={<Articles />} />
 					</Routes>
-
+					<Footer />
 					{/* <header className='App-header'>
 					<Rotate src={logo} className='App-logo' alt='logo'></Rotate>
 					<p>
@@ -46,6 +49,7 @@ export default App;
 
 const Container = styled.div`
 	text-align: center;
+	background-color: ${theme.primaryColor};
 `;
 
 /* 	.App-logo {

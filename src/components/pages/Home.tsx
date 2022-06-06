@@ -7,13 +7,13 @@ import { Landing, NewRecipes } from '../organisms';
 
 export const Home: React.FC = () => {
 	return (
-		<Container>
+		<Main>
 			<Landing />
 			<NewRecipes />
-		</Container>
+		</Main>
 	);
 };
 
-const Container = styled.main`
+const Main = styled.main`
 	padding: 10vh 0 0 0;
 `;

@@ -8,7 +8,7 @@ import { Recipe } from '../molecules';
 
 export const NewRecipes = () => {
 	return (
-		<Container id='new'>
+		<Section id='new'>
 			<H2>Nye opskrifter</H2>
 			<Recipe title='Butter Chicken india style' time='1t 45m' />
 			<Recipe title='Butter Chicken india style' time='1t 45m' />
@@ -16,12 +16,12 @@ export const NewRecipes = () => {
 			<Recipe title='Butter Chicken india style' time='1t 45m' />
 			<Recipe title='Butter Chicken india style' time='1t 45m' />
 			<Recipe title='Butter Chicken india style' time='1t 45m' />
-		</Container>
+		</Section>
 	);
 };
 
-const Container = styled.div`
-	padding: 5rem 0;
+const Section = styled.section`
+	padding: 4rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
