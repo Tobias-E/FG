@@ -33,7 +33,7 @@ export const GlobalStyle: GlobalStyleComponent<{}, DefaultTheme> = createGlobalS
         margin: 0;
         font-family: "ABeeZee";
     }
-    h1, h2, h3, h4, h5, h6, p {
+    h1, h2, h3, h4, h5, h6, p, i{
         font-family: "ABeeZee";
         color: ${theme.textColor}
     }
