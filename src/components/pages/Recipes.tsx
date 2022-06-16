@@ -14,21 +14,20 @@ import { Category } from '../molecules';
 export const Recipes: React.FC = () => {
 	return (
 		<Main>
-			<h1>Recipes</h1>
 			<Categories>
-				<Category title={'Alle opskrifter'} src={butterChicken} />
-				<Category title={'Bagværk'} src={bagvaerk} />
-				<Category title={'Forret'} src={forret} />
-				<Category title={'Hovedret'} src={hovedret} />
-				<Category title={'Dessert'} src={dessert} />
-				<Category title={'Kage'} src={kage} />
+				<Category title={'Alle opskrifter'} src={butterChicken} link={'all'} />
+				<Category title={'Bagværk'} src={bagvaerk} link={'all'} />
+				<Category title={'Forret'} src={forret} link={'all'} />
+				<Category title={'Hovedret'} src={hovedret} link={'all'} />
+				<Category title={'Dessert'} src={dessert} link={'all'} />
+				<Category title={'Kage'} src={kage} link={'all'} />
 			</Categories>
 		</Main>
 	);
 };
 
 const Main = styled.main`
-	padding: 4rem 0;
+	padding: 5rem 0 4rem 0;
 `;
 
 const Categories = styled.section`

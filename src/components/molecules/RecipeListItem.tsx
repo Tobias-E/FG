@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // Assets, interfaces & states
 import { theme } from '../utils';
@@ -8,11 +9,12 @@ import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 interface IRecipe {
 	title: string;
 	time: string;
+	link: string;
 }
 
-export const Recipe = (props: IRecipe) => {
+export const RecipeListItem = (props: IRecipe) => {
 	return (
-		<NewRecipe>
+		<RecipeLink to={props.link}>
 			<TextBox>
 				<H3>{props.title}</H3>
 				<Time>
@@ -21,9 +23,18 @@ export const Recipe = (props: IRecipe) => {
 				</Time>
 			</TextBox>
 			<Img src={butterChicken} />
-		</NewRecipe>
+		</RecipeLink>
 	);
 };
+const RecipeLink = styled(Link)`
+	width: 86vw;
+	margin: 1rem 1.7rem;
+	padding: 1rem 1.2rem;
+	display: flex;
+	flex-direction: row;
+	border-radius: 10px;
+	background-color: ${theme.cardColor};
+`;
 
 const H3 = styled.h3`
 	margin: 0.4rem 0;
@@ -43,16 +54,6 @@ const H4Orange = styled.h4`
 	justify-items: center;
 	text-align: center;
 	color: ${theme.buttonColor};
-`;
-
-const NewRecipe = styled.div`
-	width: 86vw;
-	margin: 1rem 1.7rem;
-	padding: 1rem 1.2rem;
-	display: flex;
-	flex-direction: row;
-	border-radius: 10px;
-	background-color: ${theme.cardColor};
 `;
 
 const TextBox = styled.div`

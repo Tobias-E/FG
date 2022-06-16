@@ -1,3 +1,3 @@
 export * from './Nav';
-export * from './Recipe';
+export * from './RecipeListItem';
 export * from './Category';

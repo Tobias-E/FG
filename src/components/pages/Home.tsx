@@ -3,13 +3,13 @@ import styled from 'styled-components';
 // Assets, interfaces & states
 
 // Components
-import { Landing, NewRecipes } from '../organisms';
+import { Landing, RecipeList } from '../organisms';
 
 export const Home: React.FC = () => {
 	return (
 		<Main>
 			<Landing />
-			<NewRecipes />
+			<RecipeList title={'Nye opskrifter'} id={'new'} />
 		</Main>
 	);
 };

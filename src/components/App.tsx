@@ -8,8 +8,9 @@ import { theme } from './utils';
 
 // Import Components
 import { GlobalStyle } from './utils';
-import { Header, Footer } from './organisms';
+import { Header, Footer, RecipeList } from './organisms';
 import { Home, Recipes, Articles } from './pages';
+import { Recipe } from './templates';
 //import logo from '../assets/logo.svg';
 
 const App: React.FC = () => {
@@ -22,6 +23,11 @@ const App: React.FC = () => {
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/recipes' element={<Recipes />} />
+						<Route
+							path='/recipes/all'
+							element={<RecipeList title={'Alle opskrifter'} id={'all'} />}
+						/>
+						<Route path='/recipes/all/recipe' element={<Recipe />} />
 						<Route path='/articles' element={<Articles />} />
 					</Routes>
 					<Footer />

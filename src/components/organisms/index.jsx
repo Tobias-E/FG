@@ -1,4 +1,4 @@
 export * from './Header';
 export * from './Landing';
-export * from './NewRecipes';
+export * from './RecipeList';
 export * from './Footer';

@@ -1,27 +1,27 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // Assets, interfaces & states
 import { theme } from '../utils';
-import butterChicken from '../../assets/img/butterchicken.png';
-import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 
 interface IRecipe {
 	title: string;
 	src?: string;
+	link: string;
 }
 
 export const Category = (props: IRecipe) => {
 	return (
-		<Container>
+		<Container to={props.link}>
 			<Img src={props.src} />
 			<H3>{props.title}</H3>
 		</Container>
 	);
 };
 
-const Container = styled.div`
+const Container = styled(Link)`
 	width: 40vw;
-	min-height: 10rem;
+	min-height: 11rem;
 	margin: 0.8rem 0.7rem;
 	padding: 1rem 1.2rem;
 	display: flex;
