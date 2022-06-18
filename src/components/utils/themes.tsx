@@ -11,6 +11,7 @@ export const theme: Itheme = {
 	textColor: white[100],
 	buttonColor: orange[100],
 	cardColor: black[200],
+	cardColorInactive: black[300],
 	widthTablet: '768px',
 	widthDesktop: '1023px',
 };
