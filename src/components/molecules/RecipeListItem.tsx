@@ -34,6 +34,7 @@ const RecipeLink = styled(Link)`
 	flex-direction: row;
 	border-radius: 10px;
 	background-color: ${theme.cardColor};
+	text-decoration: none;
 `;
 
 const H3 = styled.h3`

@@ -10,6 +10,7 @@ export const theme: Itheme = {
 	primaryColor: black[100],
 	textColor: white[100],
 	buttonColor: orange[100],
+	checkboxColor: orange[200],
 	cardColor: black[200],
 	cardColorInactive: black[300],
 	widthTablet: '768px',

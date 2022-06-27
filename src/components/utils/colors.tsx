@@ -16,4 +16,5 @@ export const white: IColor = {
 };
 export const orange: IColor = {
 	100: '#F08F1E',
+	200: 'rgb(218, 126, 30)',
 };

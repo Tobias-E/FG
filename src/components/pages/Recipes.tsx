@@ -27,7 +27,7 @@ export const Recipes: React.FC = () => {
 };
 
 const Main = styled.main`
-	padding: 5rem 0 4rem 0;
+	padding: 6rem 0 4rem 0;
 `;
 
 const Categories = styled.section`

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Tabs, Checkbox } from 'antd';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 // Assets, interfaces & states
 import { theme } from '../utils';
@@ -12,7 +13,9 @@ import { ReactComponent as Clock } from '../../assets/icons/whiteClock.svg';
 	time: string;
 } */
 
-const { TabPane } = Tabs;
+/* const { TabPane } = Tabs;
+
+const { Step } = Steps; */
 
 export const Recipe: React.FC = () => {
 	const [counter, setCounter] = useState(1);
@@ -25,6 +28,20 @@ export const Recipe: React.FC = () => {
 			setCounter((count) => count - 1);
 		}
 	};
+
+	// Tabs
+	const [value, setValue] = useState(0);
+	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+		setValue(newValue);
+	};
+
+	// Steps
+	/* 	const [current, setCurrent] = useState(0);
+	const onChange = (value: number) => {
+		console.log('onChange::', current);
+		setCurrent(value);
+	}; */
+
 	return (
 		<Main>
 			<Img src={butterChicken} />
@@ -41,20 +58,35 @@ export const Recipe: React.FC = () => {
 				</Sticker>
 			</StickerContainer>
 			<CardContainer className='card-container'>
-				<Tabs type='card'>
+				<Tabs value={value} onChange={handleChange}>
+					<Tab label='Ingredienser' />
+					<Tab label='Opskrift' />
+					<Tab label='Allergier' />
+					<Tab label='Info' />
+				</Tabs>
+				{/* 	<Tabs type='card'>
 					<TabPane tab='Ingredienser' key='1'>
 						<Ingredient>
 							<CheckboxS />
 							<p>500 gram - Kyllingebryst</p>
 						</Ingredient>
-						<p>Content of Tab Pane 1</p>
-						<p>Content of Tab Pane 1</p>
-						<p>Content of Tab Pane 1</p>
+						<Ingredient>
+							<CheckboxS />
+							<p>500 gram - Kyllingebryst</p>
+						</Ingredient>
 					</TabPane>
 					<TabPane tab='Opskrift' key='2'>
-						<p>Content of Tab Pane 2</p>
-						<p>Content of Tab Pane 2</p>
-						<p>Content of Tab Pane 2</p>
+						<Steps current={current} onChange={onChange}>
+							<Step
+								title='Step 1'
+								description='Kom yoghurt i en skål sammen med hakkede tomater og finthakkede hvidløg.'
+							/>
+							<Step
+								title='Step 2'
+								description='Skræl en lille knold ingefær og riv den i sammen med garam masale (der er et indisk blandingskrydderi), spidskommen, gurkemeje, koriander og saften af en lime.'
+							/>
+							<Step title='Step 3' description='Rør det godt sammen.' />
+						</Steps>
 					</TabPane>
 					<TabPane tab='Allergier' key='3'>
 						<p>Content of Tab Pane 3</p>
@@ -66,7 +98,7 @@ export const Recipe: React.FC = () => {
 						<p>Content of Tab Pane 4</p>
 						<p>Content of Tab Pane 4</p>
 					</TabPane>
-				</Tabs>
+				</Tabs> */}
 			</CardContainer>
 		</Main>
 	);
@@ -108,10 +140,11 @@ const Button = styled.button`
 	color: ${theme.textColor};
 `;
 
+// Tabs
 const CardContainer = styled.div`
 	padding: 2.5rem 1.5rem;
-
-	.ant-tabs-nav-list {
+`;
+/* .ant-tabs-nav-list {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -141,14 +174,17 @@ const CardContainer = styled.div`
 
 	.ant-tabs-tab-active {
 		color: ${theme.cardColor};
-	}
-`;
-const CheckboxS = styled(Checkbox)`
+	} */
+
+// Checkbox
+/* const CheckboxS = styled(Checkbox)`
 	padding: 0 0.7rem 0 0.5rem;
 
-	.ant-checkbox-checked .ant-checkbox-inner {
-		background-color: ${theme.buttonColor};
-		border-color: ${theme.buttonColor};
+	.ant-checkbox-input {
+		accent-color: ${theme.checkboxColor};
+	}
+	.ant-checkbox-input:focus {
+		outline: none;
 	}
 `;
 
@@ -156,4 +192,7 @@ const Ingredient = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-`;
+	p {
+		margin: 0.8rem 0;
+	}
+`; */

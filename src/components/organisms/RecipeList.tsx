@@ -30,7 +30,7 @@ export const RecipeList = (props: IRecipeList) => {
 };
 
 const Section = styled.section`
-	padding: 4rem 0;
+	padding: 6rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
