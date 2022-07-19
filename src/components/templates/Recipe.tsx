@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 
 // Assets, interfaces & states
 import { theme } from '../utils';
 import butterChicken from '../../assets/img/butterchickenBig.png';
 import { ReactComponent as Clock } from '../../assets/icons/whiteClock.svg';
 
-/* interface IRecipe {
-	title: string;
-	time: string;
-} */
+//Components
+import { TabSection } from '../molecules';
 
-/* const { TabPane } = Tabs;
-
-const { Step } = Steps; */
-
+// Meal counter
 export const Recipe: React.FC = () => {
 	const [counter, setCounter] = useState(1);
 
@@ -30,17 +23,6 @@ export const Recipe: React.FC = () => {
 	};
 
 	// Tabs
-	const [value, setValue] = useState(0);
-	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-		setValue(newValue);
-	};
-
-	// Steps
-	/* 	const [current, setCurrent] = useState(0);
-	const onChange = (value: number) => {
-		console.log('onChange::', current);
-		setCurrent(value);
-	}; */
 
 	return (
 		<Main>
@@ -57,49 +39,7 @@ export const Recipe: React.FC = () => {
 					<Button onClick={increase}>+</Button>
 				</Sticker>
 			</StickerContainer>
-			<CardContainer className='card-container'>
-				<Tabs value={value} onChange={handleChange}>
-					<Tab label='Ingredienser' />
-					<Tab label='Opskrift' />
-					<Tab label='Allergier' />
-					<Tab label='Info' />
-				</Tabs>
-				{/* 	<Tabs type='card'>
-					<TabPane tab='Ingredienser' key='1'>
-						<Ingredient>
-							<CheckboxS />
-							<p>500 gram - Kyllingebryst</p>
-						</Ingredient>
-						<Ingredient>
-							<CheckboxS />
-							<p>500 gram - Kyllingebryst</p>
-						</Ingredient>
-					</TabPane>
-					<TabPane tab='Opskrift' key='2'>
-						<Steps current={current} onChange={onChange}>
-							<Step
-								title='Step 1'
-								description='Kom yoghurt i en skål sammen med hakkede tomater og finthakkede hvidløg.'
-							/>
-							<Step
-								title='Step 2'
-								description='Skræl en lille knold ingefær og riv den i sammen med garam masale (der er et indisk blandingskrydderi), spidskommen, gurkemeje, koriander og saften af en lime.'
-							/>
-							<Step title='Step 3' description='Rør det godt sammen.' />
-						</Steps>
-					</TabPane>
-					<TabPane tab='Allergier' key='3'>
-						<p>Content of Tab Pane 3</p>
-						<p>Content of Tab Pane 3</p>
-						<p>Content of Tab Pane 3</p>
-					</TabPane>
-					<TabPane tab='Info' key='4'>
-						<p>Content of Tab Pane 4</p>
-						<p>Content of Tab Pane 4</p>
-						<p>Content of Tab Pane 4</p>
-					</TabPane>
-				</Tabs> */}
-			</CardContainer>
+			<TabSection />
 		</Main>
 	);
 };
@@ -141,9 +81,48 @@ const Button = styled.button`
 `;
 
 // Tabs
-const CardContainer = styled.div`
-	padding: 2.5rem 1.5rem;
-`;
+
+/* const TabpanelStyled = styled(TabPanel)`
+	background-color: ${theme.cardColor};
+`; */
+
+// ANT DESIGN tabs
+/* 	<Tabs type='card'>
+					<TabPane tab='Ingredienser' key='1'>
+						<Ingredient>
+							<CheckboxS />
+							<p>500 gram - Kyllingebryst</p>
+						</Ingredient>
+						<Ingredient>
+							<CheckboxS />
+							<p>500 gram - Kyllingebryst</p>
+						</Ingredient>
+					</TabPane>
+					<TabPane tab='Opskrift' key='2'>
+						<Steps current={current} onChange={onChange}>
+							<Step
+								title='Step 1'
+								description='Kom yoghurt i en skål sammen med hakkede tomater og finthakkede hvidløg.'
+							/>
+							<Step
+								title='Step 2'
+								description='Skræl en lille knold ingefær og riv den i sammen med garam masale (der er et indisk blandingskrydderi), spidskommen, gurkemeje, koriander og saften af en lime.'
+							/>
+							<Step title='Step 3' description='Rør det godt sammen.' />
+						</Steps>
+					</TabPane>
+					<TabPane tab='Allergier' key='3'>
+						<p>Content of Tab Pane 3</p>
+						<p>Content of Tab Pane 3</p>
+						<p>Content of Tab Pane 3</p>
+					</TabPane>
+					<TabPane tab='Info' key='4'>
+						<p>Content of Tab Pane 4</p>
+						<p>Content of Tab Pane 4</p>
+						<p>Content of Tab Pane 4</p>
+					</TabPane>
+				</Tabs> */
+
 /* .ant-tabs-nav-list {
 		display: flex;
 		flex-direction: row;

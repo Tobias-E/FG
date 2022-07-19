@@ -1,3 +1,4 @@
+import { createTheme } from '@mui/material/styles';
 import { black, white, orange } from './colors';
 //import { primaryFont, headerFont } from './typography';
 
@@ -16,3 +17,17 @@ export const theme: Itheme = {
 	widthTablet: '768px',
 	widthDesktop: '1023px',
 };
+
+export const mtheme = createTheme({
+	palette: {
+		primary: {
+			main: orange[100],
+		},
+	},
+	bg: {
+		main: black[100],
+	},
+	text: {
+		main: white[100],
+	},
+});

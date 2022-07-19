@@ -1,10 +1,10 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Assets, interfaces & states
-import { theme } from './utils';
+import { theme, mtheme } from './utils';
 
 // Import Components
 import { GlobalStyle } from './utils';
@@ -16,22 +16,37 @@ import { Recipe } from './templates';
 const App: React.FC = () => {
 	return (
 		<Container className='App'>
-			<RecoilRoot>
-				<Router>
-					<GlobalStyle />
-					<Header />
-					<Routes>
-						<Route path='/' element={<Home />} />
-						<Route path='/recipes' element={<Recipes />} />
-						<Route
-							path='/recipes/all'
-							element={<RecipeList title={'Alle opskrifter'} id={'all'} />}
-						/>
-						<Route path='/recipes/all/recipe' element={<Recipe />} />
-						<Route path='/articles' element={<Articles />} />
-					</Routes>
-					<Footer />
-					{/* <header className='App-header'>
+			<ThemeProvider theme={mtheme}>
+				<RecoilRoot>
+					<Router>
+						<GlobalStyle />
+						<Header />
+						<Routes>
+							<Route path='/' element={<Home />} />
+							<Route path='/recipes' element={<Recipes />} />
+							<Route
+								path='/recipes/all'
+								element={<RecipeList title={'Alle opskrifter'} id={'all'} />}
+							/>
+							<Route path='/recipes/all/recipe' element={<Recipe />} />
+							<Route path='/articles' element={<Articles />} />
+						</Routes>
+						<Footer />
+					</Router>
+				</RecoilRoot>
+			</ThemeProvider>
+		</Container>
+	);
+};
+
+export default App;
+
+const Container = styled.div`
+	text-align: center;
+	background-color: ${theme.primaryColor};
+`;
+
+/* <header className='App-header'>
 					<Rotate src={logo} className='App-logo' alt='logo'></Rotate>
 					<p>
 						Edit <code>src/App.tsx</code> and save to reload.
@@ -44,19 +59,7 @@ const App: React.FC = () => {
 					>
 						Learn React
 					</a>
-				</header> */}
-				</Router>
-			</RecoilRoot>
-		</Container>
-	);
-};
-
-export default App;
-
-const Container = styled.div`
-	text-align: center;
-	background-color: ${theme.primaryColor};
-`;
+				</header> */
 
 /* 	.App-logo {
 		height: 40vmin;

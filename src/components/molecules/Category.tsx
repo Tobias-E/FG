@@ -34,7 +34,7 @@ const Container = styled(Link)`
 const Img = styled.img`
 	max-width: 80px;
 	max-height: 80px;
-	margin-bottom: 0.6rem;
+	margin-bottom: 0.4rem;
 `;
 
 const H3 = styled.h3`
