@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import { theme } from '../utils';
 
 // Components
-import { Steps, Checkboxes } from '../atoms';
+import { Checkboxes, Steps, Allergies } from '../atoms';
 
 // Interface
 interface TabPanelProps {
@@ -68,7 +68,7 @@ export const TabSection: React.FC = () => {
 					<Steps />
 				</TabPanel>
 				<TabPanel value={value} index={2}>
-					Allergier
+					<Allergies />
 				</TabPanel>
 			</BoxStyled>
 		</Card>
@@ -88,3 +88,4 @@ const TabStyled = styled(Tab)`
 	color: ${theme.textColor};
 	border-radius: 12px 12px 0 0;
 `;
+console.log(document.querySelectorAll(' p * div '));

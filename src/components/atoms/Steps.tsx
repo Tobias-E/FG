@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 // Assets, interfaces & states
 import { theme } from '../utils';
 
+// Export
 const steps = [
 	{
 		label: 'Select campaign settings',
@@ -71,4 +72,5 @@ const StepLabelStyled = styled(StepLabel)`
 
 const TypographyStyled = styled(Typography)`
 	color: ${theme.textColor};
+	text-align: start;
 `;
