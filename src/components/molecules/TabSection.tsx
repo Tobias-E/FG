@@ -62,10 +62,9 @@ export const TabSection: React.FC = () => {
 				</Tabs>
 				<TabPanel value={value} index={0} {...a11yProps}>
 					Ingredienser
-					<Steps />
 				</TabPanel>
 				<TabPanel value={value} index={1}>
-					Opskrift
+					<Steps />
 				</TabPanel>
 				<TabPanel value={value} index={2}>
 					Allergier
