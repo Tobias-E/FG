@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import styled from 'styled-components';
 
 // Material UI
@@ -7,8 +7,6 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 // Assets, interfaces & states
@@ -35,42 +33,21 @@ const steps = [
 ];
 
 export const Steps: React.FC = () => {
-	const [activeStep, setActiveStep] = useState(0);
-
-	const handleNext = () => {
-		setActiveStep((prevActiveStep) => prevActiveStep + 1);
-	};
-
-	const handleBack = () => {
-		setActiveStep((prevActiveStep) => prevActiveStep - 1);
-	};
-
-	const handleReset = () => {
-		setActiveStep(0);
-	};
-
 	return (
 		<Box>
 			<Stepper orientation='vertical'>
-				{steps.map((step, index) => (
+				{steps.map((step) => (
 					<Step key={step.label}>
 						<StepLabelStyled>{step.label}</StepLabelStyled>
-						<StepContentStyled TransitionProps={{ in: true }}>
+						<StepContent TransitionProps={{ in: true }}>
 							<TypographyStyled>{step.description}</TypographyStyled>
-						</StepContentStyled>
+						</StepContent>
 					</Step>
 				))}
 			</Stepper>
 		</Box>
 	);
 };
-
-const StepContentStyled = styled(StepContent)`
-	display: block;
-	.MuiTypography-root-bXavBU {
-		display: flex;
-	}
-`;
 
 const StepLabelStyled = styled(StepLabel)`
 	color: ${theme.textColor};
@@ -88,7 +65,7 @@ const StepLabelStyled = styled(StepLabel)`
 		font-weight: 800;
 	}
 	.MuiStepLabel-label-hpWjaz {
-		font-weight: 600;
+		font-weight: 550;
 	}
 `;
 

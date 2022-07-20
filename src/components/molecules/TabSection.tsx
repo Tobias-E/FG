@@ -11,15 +11,16 @@ import Box from '@mui/material/Box';
 import { theme } from '../utils';
 
 // Components
-import { Steps } from '../atoms';
+import { Steps, Checkboxes } from '../atoms';
+
+// Interface
+interface TabPanelProps {
+	children?: React.ReactNode;
+	index: number;
+	value: number;
+}
 
 export const TabSection: React.FC = () => {
-	interface TabPanelProps {
-		children?: React.ReactNode;
-		index: number;
-		value: number;
-	}
-
 	function TabPanel(props: TabPanelProps) {
 		const { children, value, index, ...other } = props;
 
@@ -61,7 +62,7 @@ export const TabSection: React.FC = () => {
 					<TabStyled label='Allergier' />
 				</Tabs>
 				<TabPanel value={value} index={0} {...a11yProps}>
-					Ingredienser
+					<Checkboxes />
 				</TabPanel>
 				<TabPanel value={value} index={1}>
 					<Steps />
