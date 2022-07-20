@@ -60,7 +60,7 @@ const P = styled.p`
 
 const H4 = styled.h4`
 	text-align: start;
-	margin: 1rem 0 1rem 0;
+	margin: 2rem 0 1rem 0;
 `;
 
 const Li = styled.li`
