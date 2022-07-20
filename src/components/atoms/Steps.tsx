@@ -41,7 +41,9 @@ export const Steps: React.FC = () => {
 					<Step key={step.label}>
 						<StepLabelStyled>{step.label}</StepLabelStyled>
 						<StepContent TransitionProps={{ in: true }}>
-							<TypographyStyled>{step.description}</TypographyStyled>
+							<Typography component={'span'} variant={'body2'}>
+								{step.description}
+							</Typography>
 						</StepContent>
 					</Step>
 				))}
@@ -70,7 +72,7 @@ const StepLabelStyled = styled(StepLabel)`
 	}
 `;
 
-const TypographyStyled = styled(Typography)`
+/* const TypographyStyled = styled(Typography)`
 	color: ${theme.textColor};
 	text-align: start;
-`;
+`; */

@@ -32,11 +32,7 @@ export const TabSection: React.FC = () => {
 				aria-labelledby={`simple-tab-${index}`}
 				{...other}
 			>
-				{value === index && (
-					<Box sx={{ p: 3 }}>
-						<Typography>{children}</Typography>
-					</Box>
-				)}
+				{value === index && <Box sx={{ p: 3 }}>{children}</Box>}
 			</div>
 		);
 	}
@@ -61,7 +57,7 @@ export const TabSection: React.FC = () => {
 					<TabStyled label='Opskrift' />
 					<TabStyled label='Allergier' />
 				</Tabs>
-				<TabPanel value={value} index={0} {...a11yProps}>
+				<TabPanel value={value} index={0}>
 					<Checkboxes />
 				</TabPanel>
 				<TabPanel value={value} index={1}>
@@ -88,4 +84,3 @@ const TabStyled = styled(Tab)`
 	color: ${theme.textColor};
 	border-radius: 12px 12px 0 0;
 `;
-console.log(document.querySelectorAll(' p * div '));
